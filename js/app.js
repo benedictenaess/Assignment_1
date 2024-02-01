@@ -117,7 +117,7 @@ fetchVehicles();
 
 function renderVehicles (vehicle) {
 	const vehicleUl = document.querySelector('.vehicles-ul');
-	const imgArrayVehicles = ['../assets/vehicle1.jpg', '../assets/vehicle2.jpg', '../assets/vehivle3.jpg', '../assets/vehicle4.jpg', '../assets/vehicle5.jpg', '../assets/vehicle6.jpg'];
+	const imgArrayVehicles = ['../assets/vehicle1.jpg', '../assets/vehicle2.jpg', '../assets/vehicle3.jpg', '../assets/vehicle4.jpg', '../assets/vehicle5.jpg', '../assets/vehicle6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayVehicles[i];
 		printInfo(img, `Name: ${vehicle[i].name}`, `Crew: ${vehicle[i].crew}`, `Model: ${vehicle[i].model}`, `Manufacturer: ${vehicle[i].manufacturer}`, `Length: ${vehicle[i].length}`, vehicleUl);
