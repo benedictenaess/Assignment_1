@@ -1,0 +1,72 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: black;
+	background-image: url(/assets/background.jpg);
+	background-repeat: no-repeat;
+	background-position: -350px -200px;
+	background-size: 150%;
+
+}
+
+.header-container {
+	width: 100vw;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 5rem;
+	gap: 3rem;
+}
+
+button {
+	width: 10rem;
+	height: 4rem;
+	background-color: rgb(211, 240, 246);
+	border: 2px solid rgb(100, 171, 204);
+	border-radius: 1rem;
+	box-shadow: 5px 5px 20px rgb(100, 171, 204);
+	font-size: 1.2rem;
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: yellow;
+	text-shadow: 0 0 2px yellow, 0 0 2px yellow;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.main-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 80px;
+}
+
+h1 {
+	font-size: 6rem;
+	color: black;
+	font-weight: 900;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: yellow;
+	text-shadow: 0 0 3px yellow, 0 0 5px yellow;
+}
+
+.logo-img {
+	margin-top: 100px;
+	width: 700px;
+}
+
+.all-ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 4rem;
+	gap: 5rem;
+}
