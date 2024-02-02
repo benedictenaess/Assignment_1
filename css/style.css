@@ -32,9 +32,9 @@ button {
 	border-radius: 1rem;
 	box-shadow: 5px 5px 20px rgb(100, 171, 204);
 	font-size: 1.2rem;
-	-webkit-text-stroke-width: 0.5px;
-	-webkit-text-stroke-color: yellow;
-	text-shadow: 0 0 2px yellow, 0 0 2px yellow;
+	-webkit-text-stroke-width: 0.2px;
+	-webkit-text-stroke-color: #fcda01;
+	text-shadow: 0 0 2px #fcda01, 0 0 2px #fcda01;
 	font-weight: 900;
 	cursor: pointer;
 }
@@ -52,8 +52,8 @@ h1 {
 	color: black;
 	font-weight: 900;
 	-webkit-text-stroke-width: 3px;
-	-webkit-text-stroke-color: yellow;
-	text-shadow: 0 0 3px yellow, 0 0 5px yellow;
+	-webkit-text-stroke-color: #fcda01;
+	text-shadow: 0 0 3px #fcda01, 0 0 5px #fcda01;
 }
 
 .logo-img {
@@ -131,26 +131,20 @@ li img {
 
 @media (max-width: 767px) {
 	body {
-		background-position: center;
+		background-position: -500px -200px;
+		background-size: 300%;
 	}
 	.button-container {
 		flex-wrap: wrap;
-		margin-top: 2rem;
-		gap: 2rem;
-	}
-	button {
-		width: 6rem;
-		height: 2.5rem;
-		font-size: 1rem;
 	}
 	.main-container {
 		margin-top: 30px;
 	}
 	h1 {
-		font-size: 4rem;
+		font-size: 5rem;
 	}
 	.logo-img {
 		margin-top: 100px;
-		width: 300px;
+		width: 350px;
 	}
 }
