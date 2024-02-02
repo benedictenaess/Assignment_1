@@ -9,8 +9,12 @@ const originalWindow = window;
 
 if (homeButton){
 	homeButton.addEventListener('click', () => {
-		originalWindow.location.href = '/index.html';
-		window.close();
+		if (window.opener && !window.opener.closed){
+			originalWindow.location.href = '/index.html';
+			window.close();
+		} else {
+			window.location.href = '/index.html';
+		}
 	})
 }
 

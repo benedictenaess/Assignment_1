@@ -8,10 +8,9 @@
 body {
 	background-color: black;
 	background-image: url(/assets/background.jpg);
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-position: -350px -200px;
-	background-size: 150%;
-
+	background-size: 150%
 }
 
 .header-container {
