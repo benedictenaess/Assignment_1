@@ -128,3 +128,29 @@ li img {
 	display: flex;
 	align-self: center;
 }
+
+@media (max-width: 767px) {
+	body {
+		background-position: center;
+	}
+	.button-container {
+		flex-wrap: wrap;
+		margin-top: 2rem;
+		gap: 2rem;
+	}
+	button {
+		width: 6rem;
+		height: 2.5rem;
+		font-size: 1rem;
+	}
+	.main-container {
+		margin-top: 30px;
+	}
+	h1 {
+		font-size: 4rem;
+	}
+	.logo-img {
+		margin-top: 100px;
+		width: 300px;
+	}
+}
