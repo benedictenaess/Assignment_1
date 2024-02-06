@@ -43,20 +43,21 @@ if(vehicleButton){
 }
 
 //FETCH API
+const filmUl = document.querySelector('.film-ul');
 const fetchFilms = async () => {
 	try {
 		const response = await fetch('https://swapi.dev/api/films/');
 		const result = await response.json();
 		renderFilms(result.results);
 	} catch (error) {
-		console.log('there is an error', error);
+		errorHandling(filmUl);
+		console.log(error);
 	}
 }
 
 fetchFilms();
 
 function renderFilms (films) {
-	const filmUl = document.querySelector('.film-ul');
 	const imgArrayFilms = ['../assets/film1.jpg', '../assets/film2.jpg', '../assets/film3.jpg', '../assets/film4.jpg', '../assets/film5.jpg', '../assets/film6.jpg'];
 	films.forEach((film, index) => {
 		const imgIndex = index % imgArrayFilms.length;
@@ -65,20 +66,21 @@ function renderFilms (films) {
 	});
 }
 
+const peopleUl = document.querySelector('.people-ul');
 const fetchPeople = async () => {
 	try {
 		const response = await fetch('https://swapi.dev/api/people/');
 		const result = await response.json();
 		renderPeople(result.results);
 	} catch (error) {
-		console.log('there is an error', error);
+		errorHandling(peopleUl);
+		console.log(error);
 	}
 }
 fetchPeople();
 
 
 function renderPeople (people) {
-	const peopleUl = document.querySelector('.people-ul');
 	const imgArrayPeople = ['../assets/people1.jpg', '../assets/people2.jpg', '../assets/people3.jpg', '../assets/people4.jpg', '../assets/people5.jpg', '../assets/people6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayPeople[i];
@@ -87,20 +89,21 @@ function renderPeople (people) {
 	}
 }
 
+const planetUl = document.querySelector('.planet-ul');
 const fetchPlanets = async () => {
 	try {
 		const response = await fetch('https://swapi.dev/api/planets/');
 		const result = await response.json();
 		renderPlanets(result.results);
 	} catch (error) {
-		console.log('there is an error', error);
+		errorHandling(planetUl);
+		console.log(error);
 	}
 }
 fetchPlanets();
 
 
 function renderPlanets (planets) {
-	const planetUl = document.querySelector('.planet-ul');
 	const imgArrayPlanets = ['../assets/planet1.jpg', '../assets/planet2.jpg', '../assets/planet3.jpg', '../assets/planet4.jpg', '../assets/planet5.jpg', '../assets/planet6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayPlanets[i];
@@ -108,19 +111,20 @@ function renderPlanets (planets) {
 	}
 }
 
+const vehicleUl = document.querySelector('.vehicles-ul');
 const fetchVehicles = async () => {
 	try {
 		const response = await fetch('https://swapi.dev/api/vehicles/');
 		const result = await response.json();
 		renderVehicles(result.results)
 	} catch (error) {
-		console.log('There is an error', error);
+		errorHandling(vehicleUl);
+		console.log(error);
 	}
 }
 fetchVehicles();
 
 function renderVehicles (vehicle) {
-	const vehicleUl = document.querySelector('.vehicles-ul');
 	const imgArrayVehicles = ['../assets/vehicle1.jpg', '../assets/vehicle2.jpg', '../assets/vehicle3.jpg', '../assets/vehicle4.jpg', '../assets/vehicle5.jpg', '../assets/vehicle6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayVehicles[i];
@@ -156,4 +160,12 @@ function printInfo (img, first, second, third, fourth, fifth, targetElement) {
 	item3.textContent = third;
 	item4.textContent = fourth;
 	item5.textContent = fifth;
+}
+
+//ERROR HANDLING
+function errorHandling (targetElement) {
+	const errorMessage = document.createElement('div');
+	errorMessage.classList.add('error-handling');
+	errorMessage.textContent = 'There is an error, try to refresh page'
+	targetElement.append(errorMessage);
 }

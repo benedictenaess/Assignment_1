@@ -130,6 +130,16 @@ li img {
 	align-self: center;
 }
 
+.error-handling {
+	text-align: center;
+	font-size: 4rem;
+	color: black;
+	font-weight: 700;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: #fcda01;
+	text-shadow: 0 0 3px #fcda01, 0 0 5px #fcda01;
+}
+
 @media (max-width: 680px) {
 	body {
 		background-position: -400px -150px;
