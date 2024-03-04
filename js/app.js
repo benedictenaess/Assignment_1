@@ -62,7 +62,7 @@ function renderFilms (films) {
 	films.forEach((film, index) => {
 		const imgIndex = index % imgArrayFilms.length;
 		const img = imgArrayFilms[imgIndex];
-		printInfo(img, `Title: ${film.title}`, `Episode ID: ${film.episode_id}`, `Director: ${film.director}`, `Producer: ${film.producer}`, `Release date: ${film.release_date}`, filmUl);
+		renderInfo(img, `Title: ${film.title}`, `Episode ID: ${film.episode_id}`, `Director: ${film.director}`, `Producer: ${film.producer}`, `Release date: ${film.release_date}`, filmUl);
 	});
 }
 
@@ -85,7 +85,7 @@ function renderPeople (people) {
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayPeople[i];
 		console.log(img);
-		printInfo(img, `Name: ${people[i].name}`, `Mass: ${people[i].mass}`, `Gender: ${people[i].gender}`, `Height: ${people[i].height}`, `Eye color: ${people[i].eye_color}`, peopleUl);
+		renderInfo(img, `Name: ${people[i].name}`, `Mass: ${people[i].mass}`, `Gender: ${people[i].gender}`, `Height: ${people[i].height}`, `Eye color: ${people[i].eye_color}`, peopleUl);
 	}
 }
 
@@ -107,7 +107,7 @@ function renderPlanets (planets) {
 	const imgArrayPlanets = ['../assets/planet1.jpg', '../assets/planet2.jpg', '../assets/planet3.jpg', '../assets/planet4.jpg', '../assets/planet5.jpg', '../assets/planet6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayPlanets[i];
-		printInfo(img, `Name: ${planets[i].name}`, `Terrain: ${planets[i].terrain}`, `Climate: ${planets[i].climate}`, `Population: ${planets[i].population}`, `Orbitual period: ${planets[i].orbital_period}`, planetUl);
+		renderInfo(img, `Name: ${planets[i].name}`, `Terrain: ${planets[i].terrain}`, `Climate: ${planets[i].climate}`, `Population: ${planets[i].population}`, `Orbitual period: ${planets[i].orbital_period}`, planetUl);
 	}
 }
 
@@ -128,14 +128,12 @@ function renderVehicles (vehicle) {
 	const imgArrayVehicles = ['../assets/vehicle1.jpg', '../assets/vehicle2.jpg', '../assets/vehicle3.jpg', '../assets/vehicle4.jpg', '../assets/vehicle5.jpg', '../assets/vehicle6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayVehicles[i];
-		printInfo(img, `Name: ${vehicle[i].name}`, `Crew: ${vehicle[i].crew}`, `Model: ${vehicle[i].model}`, `Manufacturer: ${vehicle[i].manufacturer}`, `Length: ${vehicle[i].length}`, vehicleUl);
+		renderInfo(img, `Name: ${vehicle[i].name}`, `Crew: ${vehicle[i].crew}`, `Model: ${vehicle[i].model}`, `Manufacturer: ${vehicle[i].manufacturer}`, `Length: ${vehicle[i].length}`, vehicleUl);
 	}
 }
 
-
-
 //PRINT FUNCTION
-function printInfo (img, first, second, third, fourth, fifth, targetElement) {
+function renderInfo (img, property1, property2, property3, property4, property5, targetElement) {
 	//creating elements
 	const mainList = document.createElement('li');
 	const image = document.createElement('img');
@@ -155,11 +153,11 @@ function printInfo (img, first, second, third, fourth, fifth, targetElement) {
 
 	//content
 	image.src = img;
-	item1.textContent = first;
-	item2.textContent = second;
-	item3.textContent = third;
-	item4.textContent = fourth;
-	item5.textContent = fifth;
+	item1.textContent = property1;
+	item2.textContent = property2;
+	item3.textContent = property3;
+	item4.textContent = property4;
+	item5.textContent = property5;
 }
 
 //ERROR HANDLING
