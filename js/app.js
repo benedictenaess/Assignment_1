@@ -1,4 +1,4 @@
-//BUTTONS
+//BUTTON HANDELING ---------------------------------------------
 const homeButton = document.querySelector('.home-button');
 const filmButton = document.querySelector('.film-button');
 const peopleButton = document.querySelector('.people-button');
@@ -42,7 +42,7 @@ if(vehicleButton){
 	})
 }
 
-//FETCH API
+//FETCH API ----------------------------------------------------------------
 const filmUl = document.querySelector('.film-ul');
 const fetchFilms = async () => {
 	try {
@@ -55,7 +55,9 @@ const fetchFilms = async () => {
 	}
 }
 
-fetchFilms();
+if(window.location.pathname.includes('film')){
+	fetchFilms();
+}
 
 function renderFilms (films) {
 	const imgArrayFilms = ['../assets/film1.jpg', '../assets/film2.jpg', '../assets/film3.jpg', '../assets/film4.jpg', '../assets/film5.jpg', '../assets/film6.jpg'];
@@ -77,14 +79,16 @@ const fetchPeople = async () => {
 		console.log(error);
 	}
 }
-fetchPeople();
+
+if(window.location.pathname.includes('people')){
+	fetchPeople();
+}
 
 
 function renderPeople (people) {
 	const imgArrayPeople = ['../assets/people1.jpg', '../assets/people2.jpg', '../assets/people3.jpg', '../assets/people4.jpg', '../assets/people5.jpg', '../assets/people6.jpg'];
 	for(let i = 0; i < 6; i++){
 		const img = imgArrayPeople[i];
-		console.log(img);
 		renderInfo(img, `Name: ${people[i].name}`, `Mass: ${people[i].mass}`, `Gender: ${people[i].gender}`, `Height: ${people[i].height}`, `Eye color: ${people[i].eye_color}`, peopleUl);
 	}
 }
@@ -100,7 +104,10 @@ const fetchPlanets = async () => {
 		console.log(error);
 	}
 }
-fetchPlanets();
+
+if(window.location.pathname.includes('planet')){
+	fetchPlanets();
+}
 
 
 function renderPlanets (planets) {
@@ -122,7 +129,10 @@ const fetchVehicles = async () => {
 		console.log(error);
 	}
 }
-fetchVehicles();
+
+if(window.location.pathname.includes('vehicle')){
+	fetchVehicles();
+}
 
 function renderVehicles (vehicle) {
 	const imgArrayVehicles = ['../assets/vehicle1.jpg', '../assets/vehicle2.jpg', '../assets/vehicle3.jpg', '../assets/vehicle4.jpg', '../assets/vehicle5.jpg', '../assets/vehicle6.jpg'];
@@ -132,7 +142,7 @@ function renderVehicles (vehicle) {
 	}
 }
 
-//PRINT FUNCTION
+//PRINT FUNCTION ----------------------------------------------------------------
 function renderInfo (img, property1, property2, property3, property4, property5, targetElement) {
 	//creating elements
 	const mainList = document.createElement('li');
@@ -160,7 +170,7 @@ function renderInfo (img, property1, property2, property3, property4, property5,
 	item5.textContent = property5;
 }
 
-//ERROR HANDLING
+//ERROR HANDLING -----------------------------------------------------------------------------------
 function errorHandling (targetElement) {
 	const errorMessage = document.createElement('div');
 	errorMessage.classList.add('error-handling');
