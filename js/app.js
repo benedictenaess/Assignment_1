@@ -51,7 +51,6 @@ const fetchFilms = async () => {
 		renderFilms(result.results);
 	} catch (error) {
 		errorHandling(filmUl);
-		console.log(error);
 	}
 }
 
@@ -76,7 +75,6 @@ const fetchPeople = async () => {
 		renderPeople(result.results);
 	} catch (error) {
 		errorHandling(peopleUl);
-		console.log(error);
 	}
 }
 
@@ -101,7 +99,6 @@ const fetchPlanets = async () => {
 		renderPlanets(result.results);
 	} catch (error) {
 		errorHandling(planetUl);
-		console.log(error);
 	}
 }
 
@@ -126,7 +123,6 @@ const fetchVehicles = async () => {
 		renderVehicles(result.results)
 	} catch (error) {
 		errorHandling(vehicleUl);
-		console.log(error);
 	}
 }
 
